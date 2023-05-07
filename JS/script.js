@@ -71,10 +71,10 @@
 //   return result;
 // }
 
-// console.log(formatMessage("Curabitur ligula sapien", 16)); 
-// console.log(formatMessage("Curabitur ligula sapien", 23)); 
+// console.log(formatMessage("Curabitur ligula sapien", 16));
+// console.log(formatMessage("Curabitur ligula sapien", 23));
 // console.log(formatMessage("Vestibulum facilisis purus nec", 30));
-// console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15)); 
+// console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15));
 // console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41));
 
 
@@ -87,4 +87,13 @@
 //   }
   
 //   return "Access denied, wrong password!";
-// }
+
+function checkFruit(fruit) {
+    const fruits = ["apple", "plum", "pear", "orange"];
+    return fruits.includes(fruit.toLowerCase());
+
+}
+console.log(checkFruit("plum"));
+console.log(checkFruit("mandarin"));
+console.log(checkFruit("pear"));
+console.log(checkFruit("Pear"));
