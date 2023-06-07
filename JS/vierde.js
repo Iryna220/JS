@@ -54,7 +54,41 @@ const people3 = [{
   name: 'Ivan',
   know: ["Jhon", "Alex"],
     }]
+//home work 7, part 1
+import { galleryItems } from './gallery-items.js';
+// Change code below this line
+const galleryItems = document.querySelector(".gallery");
+const markup = galleryItems.map(({ preview, original, description }) => 
+`<li class="gallery__item">
+  <a class="gallery__link" href= ${original}>
+    <img
+      class="gallery__image"
+      src= ${preview}
+      data-source= ${original}
+      alt= ${description}
+    />
+  </a>
+</li>`
+)
+galleryItems.insertAdjacentHTML('beforeend', markup.join(" "));
 
+galleryItems.addEventListener('click', onClick);
+
+function onClick(evt) {
+    evt.preventDefault();
+
+
+    const { target } = evt;
+    if (!target.classList.contains('gallery__image')) {
+        return
+    }
+    const imgEl = target.dateset.source;
+    const instance = basicLightbox.create(`
+    <img src="${imgEl}" width="800" height="600">
+`)
+
+    instance.show()
+}
 
 
     
